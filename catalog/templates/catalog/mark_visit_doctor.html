@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Visit {{ patient_card.animal.name }}</h1>
+  <p>Owner: {{ patient_card.animal.owner_db.first_name }}</p>
+  <p{% if patient_card.is_overdue %} class="text-danger"{% endif %}>Due date: {{ patient_card.visit_date }}</p>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}

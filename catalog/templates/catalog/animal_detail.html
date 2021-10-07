@@ -1,0 +1,40 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class='row'>
+  <div class="col-sm-12">
+  <div class="jumbotron text-center" style="background-color: #F97432;    padding-top: 10px !important;  padding-bottom: 10px !important;">
+  <h1>Name: {{ animal.name }}</h1>
+
+  <p><strong>Owner:</strong> <a href="{{ animal.owner_db.get_absolute_url }}">{{ animal.owner_db }}</a></p> 
+  
+  
+    <p><strong>Specie:</strong> {{animal.specie}} </p>
+    <p><strong>Description:</strong> {{ animal.description }}</p>
+    <h3>Visits :</h3>
+  </div>
+  </div>
+  
+
+    
+
+
+    {% for visit in animal.patient_card_set.all %}
+    <div class="col-sm-6">
+    <div class="jumbotron text-center" style="background-color: #C2EDCE;    padding-top: 10px !important;  padding-bottom: 10px !important;">
+    
+      <p class="{% if visit.status == 'c' %}text-success{% elif visit.status == 'n' %}text-danger{% else %}text-warning{% endif %}">
+        {{ visit.get_status_display }}
+      </p>
+      {% if visit.status == 'a' %}
+        <p><strong>Visit date:</strong> {{ visit.visit_date }}</p>
+      {% endif %}
+      <p><strong>Doctor:</strong> <a href="{{ visit.doctor_db.get_absolute_url }}">{{ visit.doctor_db }}</a></p>
+      <p><strong>Disease:</strong> {{ visit.disease }}</p>
+      <p class="text-muted"><strong>Id:</strong> {{ visit.id }}</p>
+    </div>  
+    </div> 
+    {% endfor %}
+  
+</div>
+{% endblock %}

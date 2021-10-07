@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    
+
+
+
+    <div class="jumbotron text-center" style="background-color: #6FB3B8;    padding-top: 10px !important;  padding-bottom: 10px !important;">
+      <h1>My animals</h1>
+      <div class="list-group"></div>
+      
+      
+        {% for animal in user.animal_set.all %}
+          
+          <a href="{{ animal.get_absolute_url }}" class="list-group-item list-group-item-action">{{animal.name }}</a>
+          
+        {% endfor %}
+      </ul>
+       
+      </div>
+    
+      
+    </div>
+
+
+
+    
+{% endblock %}

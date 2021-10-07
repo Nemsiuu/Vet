@@ -1,0 +1,28 @@
+  
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-6">
+
+        <div class="jumbotron text-center" style="background-color: #F97432;    padding-top: 10px !important;  padding-bottom: 10px !important;">
+            <h1>Doctor: {{ doctor }} </h1>
+            <p>{{doctor.phone_number}}</p>
+            <p>{{doctor.mail}}</p>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="jumbotron text-center" style="background-color: #C2EDCE;    padding-top: 10px !important;  padding-bottom: 10px !important;">
+            <p>{{doctor.about}}</p>
+
+        </div>
+    </div>
+
+</div>
+
+
+<div style="margin-left:20px;margin-top:20px">
+
+
+</div>
+{% endblock %}

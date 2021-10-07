@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Specie List</h1>
+  {% if specie_list %}
+  <ul>
+    {% for specie in specie_list %}
+      <li>
+        <a href="{{ specie.get_absolute_url }}">{{ specie.name }} </a> 
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are </p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class='row'>
+<div class="col-sm-12">
+
+<div class="jumbotron text-center" style="background-color: #F97432;    padding-top: 10px !important;  padding-bottom: 10px !important;">
+<h1>Owner: {{ owner }} </h1>
+<p>{{owner.phone_number}}</p>
+<p>{{owner.mail}}</p>
+
+
+<h3>Animals:</h3>
+</div>
+</div>
+
+{% for animal in owner.animal_set.all %}
+<div class="col-sm-6">
+<div class="jumbotron text-center" style="background-color: #C2EDCE;    padding-top: 10px !important;  padding-bottom: 10px !important;">
+  <dt><a href="{% url 'animal-detail' animal.pk %}">{{animal}}</a> </dt>
+  <dt>{{animal.specie}} </dt>
+  <dd>{{animal.description}}</dd>
+</div>
+</div>
+{% endfor %}
+
+</div>
+
+{% endblock %}

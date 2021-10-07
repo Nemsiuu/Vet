@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Animal List</h1>
+  {% if animal_list %}
+  <ul>
+    {% for animal in animal_list %}
+      <li>
+        <a href="{{ animal.get_absolute_url }}">{{ animal.name }}</a> ({{animal.owner}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no animals in our.</p>
+  {% endif %}
+{% endblock %}

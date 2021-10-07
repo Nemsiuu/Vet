@@ -1,0 +1,20 @@
+  
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Specie: {{ specie }} </h1>
+
+
+<div style="margin-left:20px;margin-top:20px">
+<h4>Animals</h4>
+
+<dl>
+{% for animal in specie.animal_set.all %}
+  <dt><a href="{% url 'animal-detail' animal.pk %}">{{animal}}</a> </dt>
+  <dd>{{animal.description}}</dd>
+{% endfor %}
+</dl>
+
+</div>
+{% endblock %}

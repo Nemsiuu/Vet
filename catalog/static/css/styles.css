@@ -1,0 +1,63 @@
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+#websiteTitle {
+ font-size: 8em;
+ vertical-align: middle;
+ padding-left: 50px;
+}
+#slogan {
+ font-size: 3em;
+}
+#logo {
+    height: 120px;
+    width: 120px;
+}
+.carousel-inner img {
+    width:1080px;
+    height:720px;
+    
+    margin: auto;
+}
+
+
+.counter-box {
+    display: block;
+    background: #f6f6f6;
+    padding: 40px 20px 37px;
+    text-align: center
+}
+
+.counter-box p {
+    margin: 5px 0 0;
+    padding: 0;
+    color: #909090;
+    font-size: 18px;
+    font-weight: 500
+}
+
+.counter-box i {
+    font-size: 60px;
+    margin: 0 0 15px;
+    color: #d2d2d2
+}
+
+.counter {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #666;
+    line-height: 28px
+}
+
+.counter-box.colored {
+    background: #3acf87
+}
+
+.counter-box.colored p,
+.counter-box.colored i,
+.counter-box.colored .counter {
+    color: #fff
+}
