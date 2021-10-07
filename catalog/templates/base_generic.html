@@ -37,7 +37,7 @@
           <li class="nav-item active"><a class="nav-link" href="#"> Hello {{ user.get_username }} </a></li>
           <li class="nav-item active"><a class="nav-link" href="{% url 'animals' %}">My animals</a></li>
           {% if perms.catalog.can_mark_completed %}
-          <li class="nav-item active"><a class="nav-link" href="{% url 'patients' %}">User Borrowed</a></li>
+          <li class="nav-item active"><a class="nav-link" href="{% url 'patients' %}">My patients</a></li>
           {% endif %}
           <li class="nav-item active"><a class="nav-link" href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
           {% else %}
