@@ -2,15 +2,14 @@
 from pathlib import Path
 import os
 import django_heroku
-from decouple import config
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 
 
 
-
-SECRET_KEY = config("SECRET_KEY")
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'r9se_zu-hra5bem!jnv6$890-gs-&*)#i#gb=b7ijsc=96m0$n')
 
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 ALLOWED_HOSTS = []
